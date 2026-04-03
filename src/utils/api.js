@@ -1,6 +1,8 @@
 import { getToken } from './auth';
 
-const BASE_URL = 'http://localhost:8000/api'; // Adjust if your backend port differs
+// ✅ THE FIX: Use Vite's environment variable, fallback to localhost ONLY for local dev
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const BASE_URL = `${API_BASE}/api`;
 
 export const apiCall = async (endpoint, method = 'GET', body = null) => {
   const token = getToken();
