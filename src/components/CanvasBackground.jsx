@@ -87,7 +87,7 @@ export default function CanvasBackground() {
           let distance = ((particlesArray[a].x - particlesArray[b].x) ** 2) + ((particlesArray[a].y - particlesArray[b].y) ** 2);
           if (distance < (canvas.width / 10) * (canvas.height / 10)) {
             let opacityValue = 1 - (distance / 20000);
-            ctx.strokeStyle = `rgba(129, 140, 248, ${opacityValue * 0.3})`;
+            ctx.strokeStyle = `rgba(170, 168, 255, ${opacityValue * 0.5})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
